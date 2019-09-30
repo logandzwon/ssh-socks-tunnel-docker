@@ -1,5 +1,9 @@
 #! /bin/sh
 
+
+apk add --no-cache postgresql-client
+
+
 if [ ! -f /etc/ssh/ssh_host_rsa_key ]; then
     /usr/bin/ssh-keygen -A
     PASSWORD=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
